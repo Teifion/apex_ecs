@@ -1,3 +1,19 @@
+# Create project
+```sh
+mix new --sup ecs_hello_world
+```
+
+## Dependencies
+Add ApexECS to your dependencies:
+```elixir
+{:apex_ecs, "~> 0.1"}
+```
+
+Now get and compile
+```sh
+mix deps.get && mix deps.compile
+```
+
 hello_component.ex
 ```elixir
 defmodule EcsHelloWorld.Components.HelloComponent do

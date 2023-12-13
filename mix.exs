@@ -1,13 +1,20 @@
 defmodule ApexECS.MixProject do
   use Mix.Project
 
+  @github_url "https://github.com/Teifion/apex_ecs"
+  @version "0.0.1"
+
   def project do
     [
       app: :apex_ecs,
-      version: "0.0.1",
+      version: @version,
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+
+      # Hex
+      description: "MIT Licensed ECS engine for Elixir",
+      package: package(),
     ]
   end
 
@@ -23,6 +30,17 @@ defmodule ApexECS.MixProject do
   defp deps do
     [
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
+    ]
+  end
+
+  defp package do
+    [
+      maintainers: ["Teifion Jordan"],
+      licenses: ["MIT"],
+      links: %{
+        "Changelog" => "#{@github_url}/blob/master/CHANGELOG.md",
+        "GitHub" => @github_url
+      }
     ]
   end
 end
